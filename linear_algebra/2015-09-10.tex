@@ -1,0 +1,42 @@
+\documentclass[11pt]{proc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+
+\title{Линейная алгебра. Лекция. 10 сентября 2015.}
+
+\begin{document}
+\pagestyle{empty}
+\maketitle
+\section{Нелинейные операции над матрицами}
+\subsection{Перемножение матриц}
+\[A_{m \times n} \times B_{n \times p} = C_{m \times p}: c_{ij} = \sum^n_{k=1}a_{ik} \cdot b_{kj}\]
+\begin{quote}
+	\textbf{N.B.!}
+	Матрицы можно перемножать только если число столбцов первой матрицы совпадает с числом строк второй матрицы.
+\end{quote}
+\subsubsection{Свойства операции умножения матриц}
+\begin{enumerate}
+	\item{$A \times B \neq B \times A$}
+	\item{$A(B \times C)=(A \times B)C = A \times B \times C$}
+	\item{$(A + B)C = A \times C + B \times C$}
+\end{enumerate}
+\subsection{Транспонирование матрицы}
+\[A^T=\begin{pmatrix}
+	a_{11} & a_{12} & \dots & a_{m1} \\
+	a_{12} & a_{22} & \dots &  a_{m2} \\
+	\hdotsfor{4}\\
+	a_{1n} & a_{2n} & \dots & a_{mn} 
+\end{pmatrix} = B_{n \times m}\]
+\[b_{ij} = a_{ji}\]
+\subsubsection{Свойства транспонирования}
+\begin{enumerate}
+	\item{Симметричная матрица транспонируется сама в себя \[A^T = A\]}
+	\item{Зеркально-симметричная матрица транспонируется в противоположную ей зеркально-симметричную матрицу \[\begin{pmatrix}1&2&3\\-2&5&6\\-3&-6&9\\\end{pmatrix}^T = \begin{pmatrix}1&-2&-3\\2&5&-6\\3&6&9\\\end{pmatrix}\]}
+	\item{$(A^T)^T = A$}
+	\item{$(A+B)^T = A^T + B^T$}
+	\item{$\lambda(A+B)^T = \lambda A^T + \lambda B^T$}
+	\item{$(A \times B)^T = B^T \times A^T$}
+\end{enumerate}
+\section{Блочные матрицы, операции над ними}
+\end{document}

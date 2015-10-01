@@ -1,0 +1,143 @@
+\documentclass[11pt]{proc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+
+\title{Линейная алгебра. Лекция. 3 сентября 2015.}
+
+\begin{document}
+\pagestyle{empty}
+\maketitle
+
+\section{Основные определения}
+$A$, $B$, $C$ - матрицы\\
+$a$, $b$, $c$ - элементы матрицы
+\[	
+A_{m\times n} = \begin{pmatrix}
+		a_{11} & a_{12} & \dots & a_{1n}\\
+		a_{21} & a_{22} & \dots & a_{2n}\\
+		\hdotsfor{4}\\
+		a_{m1} & a_{m2} & \dots & a_{mn}\\
+	\end{pmatrix}
+\]
+$a_{ij}$ - элемент матрицы\\
+$i = \overline{1,m}$ - номер строки\\
+$j = \overline{1,n}$ - номер столбца\\
+\begin{quote}
+	\emph{Определение}\\
+	Пусть $i \in I$, $j \in J$, $I \times J$ - множество всех пар $(i,j)$, тогда матрицей на множестве $I \times J$ называется функция на множестве $I \times J$, т.е. закон, сопоставляющий каждой паре $(i,j)$ элемент $a_{ij}$.
+\end{quote}
+\section{Виды матриц}
+\begin{enumerate}
+	\item{Прямоугольная матрица, где $ m\neq n$}
+	\item{Квадратная матрица (матрица порядка $n$), где $m=n$}
+	\item{Диагональная матрица \[\begin{pmatrix}a_{11} & 0 & 0 \\ 0 & a_{22} & 0 \\ 0 & 0 & a_{33}\end{pmatrix}\]}
+	\item{Скалярная матрица - диагональная матрица, где $a_{11} = a_{22} = \ldots = a_{mn}$. Играет роль константы \[\underbrace{\begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}}_{\textup{единичная матрица}}\quad\underbrace{\begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{pmatrix}}_{\textup{нулевая матрица}}\]}
+	\item{Треугольные матрицы 
+		\[
+			\underbrace{
+			\begin{pmatrix} 
+				a_{11} & a_{12} & \dots & a_{1n} \\ 
+				0 & a_{22} & \dots & a_{2n} \\ 
+				0 & 0 & \ddots & a_{3n} \\ 
+				0 & 0 & 0 & a_{nn}
+			\end{pmatrix}}_{\textup{верхняя треугольная матрица}} \quad
+			\underbrace{
+			\begin{pmatrix}
+				a_{11} & 0 & 0 & 0 \\ 
+				a_{12} & a_{22} & 0 & 0\\
+				a_{13} & a_{23} & a_{33} & 0\\
+				a_{1n} & a_{2n} & a_{3n} & a_{nn}
+			\end{pmatrix}}_{\textup{нижняя треугольная матрица}}\]}
+	\item{Ленточная матрица
+		\[
+			\begin{pmatrix}
+				a_{11} & a_{12} & a_{13} & 0 & 0 & 0\\
+				0 & a_{22} & a_{23} & a_{24} & 0 & 0\\
+				0 & 0 & a_{33} & a_{34} & a_{35} & 0\\
+				\hdotsfor{6}\\
+				0 & 0 & 0 & 0 & a_{mn-1} & a_{mn}
+			\end{pmatrix}
+		\]
+	}
+	\item{Модулированная матрица
+		\[
+			\begin{pmatrix}
+				a & b & 0 & 0 & 0\\
+				b & a & b & 0 & 0\\
+				0 & b & a & b & 0\\
+				0 & 0 & b & a & b\\
+				0 & 0 & 0 & b & a
+			\end{pmatrix}
+		\]
+	}
+	\item{Симметричная матрица
+		\[
+			\begin{pmatrix}
+				a & d & 0\\
+				d & b & e\\
+				0 & e & c
+			\end{pmatrix}
+		\]
+	}
+	\item{Зеркально-симметричная матрица
+		\[
+			\begin{pmatrix}
+				a & d & f\\
+				-d & b & e\\
+				-f & -e & c
+			\end{pmatrix}, a_{ik} = a_{kj}, i \neq j
+		\]
+	}
+	\item{Косо-симметричная матрица
+		\[
+			\begin{pmatrix}
+				0 & a & c\\
+				-a & 0 & b\\
+				-c & -b & 0
+			\end{pmatrix}, a_{ik} = a_{kj}, i = j, a_{ij} = 0
+		\]
+	}
+	\item{Матрица-строка
+		\[
+			\begin{pmatrix}
+				a_{11} & a_{12} & a_{13} & \dots & a_{1n}
+			\end{pmatrix}
+		\]
+	}
+	\item{Матрица-столбец
+		\[
+			\begin{pmatrix}
+				a_{11}\\
+				a_{21}\\
+				a_{31}\\
+				\vdots\\
+				a_{m1}
+			\end{pmatrix}
+		\]
+	}
+\end{enumerate}
+\section{Элементарные преобразования матриц}
+\begin{enumerate}
+	\item{Сложение (вычитание) строк или столбцов}
+	\item{Умножение строки или столбца на число, не равное нулю}
+	\item{Перестановка строк или столбцов матрицы}
+\end{enumerate}
+\section{Действия над матрицами}
+\subsection{Линейные операции}
+\begin{enumerate}
+	\item{Сложение (вычитание) \[A+B=C:c_{ij}=a_{ij}+b_{ij}, i=\overline{1,m},j=\overline{1,n}\]}
+	\item{Умножение на число \[A\cdot\lambda=D:d_{ij}=\lambda\cdot a_{ij}, \lambda-\forall\textup{ число},i=\overline{1,m},j=\overline{1,n}\]}
+\end{enumerate}
+\subsubsection{Свойства линейных операций}
+\begin{enumerate}
+	\item{Коммутативность сложения \[A+B=B+A\]}
+	\item{Ассоциативность сложения \[(A+B)+C=A+(B+C)\]}
+	\item{Дистрибутивность умножения \[\alpha(A+B)=\alpha A + \alpha B\]}
+	\item{Коммутативность умножения \[\alpha\cdot A = A\cdot\alpha\]}
+	\item{Ассоциативность умножения \[(\alpha\cdot\beta)A = \alpha(\beta\cdot A)\]}
+	\item{Дистрибутивность умножения \[(\alpha+\beta)A = \alpha A + \beta A\]}
+	\item{,,Существование нуля'' \[A + 0 = A\]}
+	\item{,,Существование минус единицы'' \[A + (-A) = 0, \textup{где} -A=(-1)\cdot A\]}
+\end{enumerate}
+\end{document}
