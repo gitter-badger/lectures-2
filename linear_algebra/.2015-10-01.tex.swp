@@ -143,5 +143,23 @@
 			\end{matrix}
 		\end{cases}
 	\end{equation}
-	
+	\underline{\textbf{Теорема "Правило Крамера"}}
+	\begin{quote}
+		Если есть система (2), в случае, когда $\det{A} \neq 0$, решение находится по формуле:
+		\[x_i=\frac{\Delta_i}{\Delta},\ (i=\overline{1;n})\]
+	\end{quote}
+	\pagebreak
+	\emph{Доказательство}
+	\begin{quote}
+		\[(2)\rightarrow AX=B \rightarrow X=A^{-1}B,\quad A^{-1}=\frac1{\det{A}}A^*\]
+		\begin{multline*}
+			\begin{pmatrix}x_1 \\ \vdots \\ x_n\end{pmatrix}=\frac1{\Delta}\begin{pmatrix}A_{11} & A_{21} & \dots & A_{n1} \\ A_{21} & A_{22} & \dots & A_{n2} \\ \hdotsfor{4} \\ A_{n1} & A_{n2} & \dots & A_{nn}\end{pmatrix}\begin{pmatrix}b_1 \\ \vdots \\ b_n\end{pmatrix}=\\
+			=\frac1{\Delta}\begin{pmatrix}A_{11}b_1+A_{22}b_2+\dots+A_{1n}b_n\\A_{21}b_1+A_{22}b_2+\dots+A_{2n}b_n\\ \hdotsfor{1}\\ A_{n1}b_1+A_{n2}b_2+\dots+A_{nn}b_n\end{pmatrix}=\frac1\Delta\begin{pmatrix}\Delta_1 \\ \Delta_2 \\ \vdots \\ \Delta_n\end{pmatrix}\Rightarrow\\ \Rightarrow x_1=\frac{\Delta_1}\Delta,\ldots,x_n=\frac{\Delta_n}\Delta
+		\end{multline*}
+		\begin{flushright}ч.т.д.\end{flushright}
+	\end{quote}
+	\underline{\textbf{Теорема}}
+	\begin{quote}
+		Пусть $A$ - матрица системы из $n$ уравнений. Если $\det{A}=0$, то система либо не имеет решений, либо имеет бесконечное множество решений (если $\Delta_i=0\ (i=\overline{1;n})$)
+	\end{quote}
 \end{document}
