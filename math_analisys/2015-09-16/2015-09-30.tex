@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage[margin=0.5in]{geometry}
+
+\title{Математический анализ.}
+\date{16 сентября 2015}
+
+\begin{document}
+\pagestyle{empty}
+\maketitle
+
+\section{Замечательные пределы}
+
+\subsection{Первый замечательный предел}
+\textbf{Утверждение 1}
+\[\boxed{\lim_{x\rightarrow0}\frac{x}{\sin{x}}=\lim_{x\rightarrow0}\frac{\sin{x}}{x}=1}\]
+\textbf{Утверждение 2}
+\[\lim_{x\rightarrow0}\frac{\arcsin{x}}{x}=1\]
+\[\lim_{x\rightarrow0}\frac{\arctg{x}}{x}=1\]
+\textsl{Пример 1}\\
+$\displaystyle\lim_{x\rightarrow0}\frac{\tg{x}}{x}=\lim_{x\rightarrow0}\left(\frac{1}{\cos{x}}\frac{\sin{x}}{x}\right)=1$\\\\
+\textsl{Пример 2}\\
+$\displaystyle\lim_{x\rightarrow0}\frac{\sin{2x}}{\tg{3x}}=\lim_{x\rightarrow0}\frac{x\sin{2x}}{x\tg{3x}}=
+\lim_{x\rightarrow0}\left(2\frac{\sin{2x}}{2x}\frac13\frac{3x}{\tg{3x}}\right)=\frac23$
+
+\subsection{Второй замечательный предел}
+\textbf{Утверждение 1}
+\[\boxed{\lim_{x\rightarrow\infty}\left(1+\frac1x\right)^x=\lim_{x\rightarrow0}\left(1+x\right)^{\frac1x}=e}\]
+\textsl{Пример 1}\\
+$\displaystyle\lim_{x\rightarrow\infty}\left(\frac{x+3}{x-1}\right)^{x-1}=\lim_{x\rightarrow\infty}\left(1-1+\frac{x+3}{x-1}\right)^{x-1}
+=\lim_{x\rightarrow\infty}\left(\underbrace{\left(1+\frac{4}{x-1}\right)^{\frac{x-1}{4}}}_{e}\right)^4=e^4$\\
+\textbf{Утверждение 2}
+\[\boxed{\lim_{x\rightarrow a}f(x)^{g(x)}=e^{\lim_{x\rightarrow a}(f(x)-1)g(x)}}\]
+
+\section{Бесконечно малые функции}
+\textbf{Определение}
+\begin{quote}
+  $\alpha(x)$ называется бесконечно малой при $x \rightarrow a$, если $\displaystyle\lim_{x \rightarrow a}\alpha(x)=0$\\
+  $A(x)$ называется бесконечно большой при $x \rightarrow a$, если $\displaystyle\lim_{x \rightarrow a}\alpha(x)=\infty$
+\end{quote}
+\subsection{Сравнение бесконечно малых функций}
+\textit{Пусть $\alpha(x)$ и $\beta(x)$ - бесконечно малые при $x \rightarrow a$, тогда:}\\
+\textbf{Определение}
+\begin{quote}
+  $\alpha(x)$ называется бесконечно малой более высокого порядка по сравнению с $\beta(x)$, если \[\exists\lim_{x \rightarrow a}\frac{\alpha(x)}{\beta(x)}=0 \Rightarrow \alpha(x)=\bar{\bar{o}}\beta(x)\]
+\end{quote}
+\textbf{Определение}
+\begin{quote}
+  $\alpha(x)$ называется бесконечно малой более низкого порядка по сравнению с $\beta(x)$, если \[\exists\lim_{x \rightarrow a}\frac{\alpha(x)}{\beta(x)}=\infty \Rightarrow \beta(x)=\bar{\bar{o}}\alpha(x)\]
+\end{quote}
+\textbf{Определение}
+\begin{quote}
+  $\alpha(x)$ и $\beta(x)$ называются бесконечно малыми одного порядка, если \[\exists\lim_{x \rightarrow a}\frac{\alpha(x)}{\beta(x)}=A,\begin{cases}A\neq0\\A\neq\infty\end{cases} \Rightarrow \alpha(x)=\underline{\underline{O}}\beta(x)\]
+\end{quote}
+\textbf{Определение}
+\begin{quote}
+  $\alpha(x)$ и $\beta(x)$ называются эквивалентными бесконечно малыми, если \[\exists\lim_{x \rightarrow a}\frac{\alpha(x)}{\beta(x)}=1 \Rightarrow \alpha(x)\sim\beta(x)\]
+\end{quote}
+\subsubsection{Эквивалентные бесконечно малые функции}
+\textbf{Если $\alpha(x)$ - бесконечно малая}\\
+
+\begin{center}
+\begin{tabular}{cc}
+  $\sin\alpha(x)\sim\alpha(x)$ & $\tg\alpha(x)\sim\alpha(x)$ \\
+  $\arcsin\alpha(x)\sim\alpha(x)$ & $\arctg\alpha(x)\sim\alpha(x)$ \\
+  $\ln(1+\alpha(x))\sim\alpha(x)$ & $e^{\alpha(x)}-1\sim\alpha(x)$ \\
+  $b^{\alpha(x)}-1\sim\alpha(x)\ln{b}$ & $(1+\alpha(x))^p\sim1+p\alpha(x)$ \\
+\end{tabular}
+\end{center}
+\end{document} 
