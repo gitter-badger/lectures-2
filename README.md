@@ -1,6 +1,8 @@
 # Конспекты лекций
 ## МАИ 6О-104Б
 
+[![Join the chat at https://gitter.im/murych/lectures](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/murych/lectures?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 | предмет | месяц | число |
 |--------|--------|-------|
 | Линейная алгебра | сентябрь | [3](http://bit.ly/1GnlQk7), [9](http://bit.ly/1KQBk4f) |
